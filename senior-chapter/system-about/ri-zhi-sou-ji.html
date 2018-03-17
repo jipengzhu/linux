@@ -1,0 +1,1920 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>日志搜集 · linux基础手册</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="朱继鹏">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="yu-yan-he-ri-qi.html" />
+    
+    
+    <link rel="prev" href="ding-shi-ren-wu.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"jipengzhu/linux-mannual","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://jipengzhu.github.io/" target="_blank" class="custom-link">Blog</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://github.com/jipengzhu" target="_blank" class="custom-link">Github</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        <li class="header">前言篇</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    阅读须知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../tip-chapter/linuxgai-shu.html">
+            
+                <a href="../../tip-chapter/linuxgai-shu.html">
+            
+                    
+                        <b>1.2.</b>
+                    
+                    Linux概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../tip-chapter/shellgai-shu.html">
+            
+                <a href="../../tip-chapter/shellgai-shu.html">
+            
+                    
+                        <b>1.3.</b>
+                    
+                    Shell概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../tip-chapter/bang-zhu-ming-ling.html">
+            
+                <a href="../../tip-chapter/bang-zhu-ming-ling.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    帮助命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../tip-chapter/mo-hu-pi-pei.html">
+            
+                <a href="../../tip-chapter/mo-hu-pi-pei.html">
+            
+                    
+                        <b>1.5.</b>
+                    
+                    模糊匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">基础篇</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../base-chapter/file-about/">
+            
+                <a href="../../base-chapter/file-about/">
+            
+                    
+                        <b>2.1.</b>
+                    
+                    文件相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../base-chapter/file-about/wen-jian-mu-lu-ti-xi.html">
+            
+                <a href="../../base-chapter/file-about/wen-jian-mu-lu-ti-xi.html">
+            
+                    
+                        <b>2.1.1.</b>
+                    
+                    文件目录体系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../base-chapter/file-about/wen-jian-ji-chu-ming-ling.html">
+            
+                <a href="../../base-chapter/file-about/wen-jian-ji-chu-ming-ling.html">
+            
+                    
+                        <b>2.1.2.</b>
+                    
+                    文件基础命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../base-chapter/file-about/wen-jian-cha-zhao-ming-ling.html">
+            
+                <a href="../../base-chapter/file-about/wen-jian-cha-zhao-ming-ling.html">
+            
+                    
+                        <b>2.1.3.</b>
+                    
+                    文件查找命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../../base-chapter/file-about/wen-jian-cha-kan-ming-ling.html">
+            
+                <a href="../../base-chapter/file-about/wen-jian-cha-kan-ming-ling.html">
+            
+                    
+                        <b>2.1.4.</b>
+                    
+                    文件查看命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../../base-chapter/file-about/wen-jian-quan-xian-ming-ling.html">
+            
+                <a href="../../base-chapter/file-about/wen-jian-quan-xian-ming-ling.html">
+            
+                    
+                        <b>2.1.5.</b>
+                    
+                    文件权限命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../../base-chapter/file-about/wen-jian-te-shu-quan-xian.html">
+            
+                <a href="../../base-chapter/file-about/wen-jian-te-shu-quan-xian.html">
+            
+                    
+                        <b>2.1.6.</b>
+                    
+                    文件特殊权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../../base-chapter/file-about/wen-jian-shi-jian-jian-jie.html">
+            
+                <a href="../../base-chapter/file-about/wen-jian-shi-jian-jian-jie.html">
+            
+                    
+                        <b>2.1.7.</b>
+                    
+                    文件时间简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../../base-chapter/file-about/wen-jian-ya-suo-jie-ya.html">
+            
+                <a href="../../base-chapter/file-about/wen-jian-ya-suo-jie-ya.html">
+            
+                    
+                        <b>2.1.8.</b>
+                    
+                    文件压缩解压
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="../../base-chapter/file-about/wen-jian-jian-ting-tong-bu.html">
+            
+                <a href="../../base-chapter/file-about/wen-jian-jian-ting-tong-bu.html">
+            
+                    
+                        <b>2.1.9.</b>
+                    
+                    文件监听同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../../base-chapter/file-about/wen-jian-jie-gou-xiang-jie.html">
+            
+                <a href="../../base-chapter/file-about/wen-jian-jie-gou-xiang-jie.html">
+            
+                    
+                        <b>2.1.10.</b>
+                    
+                    文件结构详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../base-chapter/text-edit/">
+            
+                <a href="../../base-chapter/text-edit/">
+            
+                    
+                        <b>2.2.</b>
+                    
+                    文本编辑
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../base-chapter/text-edit/vimwen-ben-bian-ji.html">
+            
+                <a href="../../base-chapter/text-edit/vimwen-ben-bian-ji.html">
+            
+                    
+                        <b>2.2.1.</b>
+                    
+                    vim文本编辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../base-chapter/text-edit/vimkuai-su-bian-ji.html">
+            
+                <a href="../../base-chapter/text-edit/vimkuai-su-bian-ji.html">
+            
+                    
+                        <b>2.2.2.</b>
+                    
+                    vim快速编辑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../../base-chapter/text-edit/vimcha-zhao-ti-huan.html">
+            
+                <a href="../../base-chapter/text-edit/vimcha-zhao-ti-huan.html">
+            
+                    
+                        <b>2.2.3.</b>
+                    
+                    vim查找替换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../../base-chapter/text-edit/vimduo-ge-wen-jian.html">
+            
+                <a href="../../base-chapter/text-edit/vimduo-ge-wen-jian.html">
+            
+                    
+                        <b>2.2.4.</b>
+                    
+                    vim多个文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../../base-chapter/text-edit/vimbian-cheng-fu-zhu.html">
+            
+                <a href="../../base-chapter/text-edit/vimbian-cheng-fu-zhu.html">
+            
+                    
+                        <b>2.2.5.</b>
+                    
+                    vim编程辅助
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.6" data-path="../../base-chapter/text-edit/vimcao-zuo-ji-qiao.html">
+            
+                <a href="../../base-chapter/text-edit/vimcao-zuo-ji-qiao.html">
+            
+                    
+                        <b>2.2.6.</b>
+                    
+                    vim操作技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.7" data-path="../../base-chapter/text-edit/vimdiffshi-yong.html">
+            
+                <a href="../../base-chapter/text-edit/vimdiffshi-yong.html">
+            
+                    
+                        <b>2.2.7.</b>
+                    
+                    vimdiff使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../base-chapter/text-process/">
+            
+                <a href="../../base-chapter/text-process/">
+            
+                    
+                        <b>2.3.</b>
+                    
+                    文本处理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../../base-chapter/text-process/grepcha-zhao.html">
+            
+                <a href="../../base-chapter/text-process/grepcha-zhao.html">
+            
+                    
+                        <b>2.3.1.</b>
+                    
+                    grep查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../../base-chapter/text-process/printfshu-chu.html">
+            
+                <a href="../../base-chapter/text-process/printfshu-chu.html">
+            
+                    
+                        <b>2.3.2.</b>
+                    
+                    printf输出
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../../base-chapter/text-process/sedchu-li.html">
+            
+                <a href="../../base-chapter/text-process/sedchu-li.html">
+            
+                    
+                        <b>2.3.3.</b>
+                    
+                    sed处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="../../base-chapter/text-process/awkchu-li.html">
+            
+                <a href="../../base-chapter/text-process/awkchu-li.html">
+            
+                    
+                        <b>2.3.4.</b>
+                    
+                    awk处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="../../base-chapter/text-process/er-jin-zhi-chu-li.html">
+            
+                <a href="../../base-chapter/text-process/er-jin-zhi-chu-li.html">
+            
+                    
+                        <b>2.3.5.</b>
+                    
+                    二进制处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="../../base-chapter/text-process/qi-ta-de-chu-li.html">
+            
+                <a href="../../base-chapter/text-process/qi-ta-de-chu-li.html">
+            
+                    
+                        <b>2.3.6.</b>
+                    
+                    其他的处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">中级篇</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../medial-chapter/user-about/">
+            
+                <a href="../../medial-chapter/user-about/">
+            
+                    
+                        <b>3.1.</b>
+                    
+                    用户相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../medial-chapter/user-about/yong-hu-jiao-hu-ming-ling.html">
+            
+                <a href="../../medial-chapter/user-about/yong-hu-jiao-hu-ming-ling.html">
+            
+                    
+                        <b>3.1.1.</b>
+                    
+                    用户交互命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../medial-chapter/user-about/yong-hu-xin-xi-ming-ling.html">
+            
+                <a href="../../medial-chapter/user-about/yong-hu-xin-xi-ming-ling.html">
+            
+                    
+                        <b>3.1.2.</b>
+                    
+                    用户信息命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../../medial-chapter/user-about/yong-hu-he-zu-guan-li.html">
+            
+                <a href="../../medial-chapter/user-about/yong-hu-he-zu-guan-li.html">
+            
+                    
+                        <b>3.1.3.</b>
+                    
+                    用户和组管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../../medial-chapter/user-about/yong-hu-he-jin-cheng-id.html">
+            
+                <a href="../../medial-chapter/user-about/yong-hu-he-jin-cheng-id.html">
+            
+                    
+                        <b>3.1.4.</b>
+                    
+                    用户和进程id
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../../medial-chapter/user-about/huan-jing-bian-liang.html">
+            
+                <a href="../../medial-chapter/user-about/huan-jing-bian-liang.html">
+            
+                    
+                        <b>3.1.5.</b>
+                    
+                    环境变量详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../medial-chapter/shell-about/">
+            
+                <a href="../../medial-chapter/shell-about/">
+            
+                    
+                        <b>3.2.</b>
+                    
+                    shell相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../medial-chapter/shell-about/shelljiao-ben-ji-chu.html">
+            
+                <a href="../../medial-chapter/shell-about/shelljiao-ben-ji-chu.html">
+            
+                    
+                        <b>3.2.1.</b>
+                    
+                    shell脚本基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../../medial-chapter/shell-about/shellyun-xing-guo-cheng.html">
+            
+                <a href="../../medial-chapter/shell-about/shellyun-xing-guo-cheng.html">
+            
+                    
+                        <b>3.2.2.</b>
+                    
+                    shell运行过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../../medial-chapter/shell-about/shellce-shi-ji-suan.html">
+            
+                <a href="../../medial-chapter/shell-about/shellce-shi-ji-suan.html">
+            
+                    
+                        <b>3.2.3.</b>
+                    
+                    shell测试计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../../medial-chapter/shell-about/shellkong-zhi-jie-gou.html">
+            
+                <a href="../../medial-chapter/shell-about/shellkong-zhi-jie-gou.html">
+            
+                    
+                        <b>3.2.4.</b>
+                    
+                    shell控制结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="../../medial-chapter/shell-about/shelltiao-shi-ji-qiao.html">
+            
+                <a href="../../medial-chapter/shell-about/shelltiao-shi-ji-qiao.html">
+            
+                    
+                        <b>3.2.5.</b>
+                    
+                    shell调试技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.6" data-path="../../medial-chapter/shell-about/shellzhu-yi-shi-xiang.html">
+            
+                <a href="../../medial-chapter/shell-about/shellzhu-yi-shi-xiang.html">
+            
+                    
+                        <b>3.2.6.</b>
+                    
+                    shell注意事项
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.7" data-path="../../medial-chapter/shell-about/shellshi-yong-jiao-ben.html">
+            
+                <a href="../../medial-chapter/shell-about/shellshi-yong-jiao-ben.html">
+            
+                    
+                        <b>3.2.7.</b>
+                    
+                    shell实用脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../medial-chapter/software-about/">
+            
+                <a href="../../medial-chapter/software-about/">
+            
+                    
+                        <b>3.3.</b>
+                    
+                    软件相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../../medial-chapter/software-about/yumji-chu-zhi-shi.html">
+            
+                <a href="../../medial-chapter/software-about/yumji-chu-zhi-shi.html">
+            
+                    
+                        <b>3.3.1.</b>
+                    
+                    yum基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../../medial-chapter/software-about/yumgong-zuo-yuan-li.html">
+            
+                <a href="../../medial-chapter/software-about/yumgong-zuo-yuan-li.html">
+            
+                    
+                        <b>3.3.2.</b>
+                    
+                    yum工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../../medial-chapter/software-about/yumshi-yong-ji-qiao.html">
+            
+                <a href="../../medial-chapter/software-about/yumshi-yong-ji-qiao.html">
+            
+                    
+                        <b>3.3.3.</b>
+                    
+                    yum实用技巧
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">高级篇</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../memory-about/">
+            
+                <a href="../memory-about/">
+            
+                    
+                        <b>4.1.</b>
+                    
+                    内存相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../memory-about/nei-cun-xiang-guan-ming-ling.html">
+            
+                <a href="../memory-about/nei-cun-xiang-guan-ming-ling.html">
+            
+                    
+                        <b>4.1.1.</b>
+                    
+                    内存相关命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../disk-about/">
+            
+                <a href="../disk-about/">
+            
+                    
+                        <b>4.2.</b>
+                    
+                    磁盘相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="../disk-about/ci-pan-xiang-guan-ming-ling.html">
+            
+                <a href="../disk-about/ci-pan-xiang-guan-ming-ling.html">
+            
+                    
+                        <b>4.2.1.</b>
+                    
+                    磁盘相关命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../process-about/">
+            
+                <a href="../process-about/">
+            
+                    
+                        <b>4.3.</b>
+                    
+                    进程相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../process-about/jin-cheng-ji-chu-zhi-shi.html">
+            
+                <a href="../process-about/jin-cheng-ji-chu-zhi-shi.html">
+            
+                    
+                        <b>4.3.1.</b>
+                    
+                    进程基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="../process-about/jin-cheng-gao-ji-zhi-shi.html">
+            
+                <a href="../process-about/jin-cheng-gao-ji-zhi-shi.html">
+            
+                    
+                        <b>4.3.2.</b>
+                    
+                    进程高级知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3" data-path="../process-about/jin-cheng-ji-chu-ming-ling.html">
+            
+                <a href="../process-about/jin-cheng-ji-chu-ming-ling.html">
+            
+                    
+                        <b>4.3.3.</b>
+                    
+                    进程基础命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.4" data-path="../process-about/jin-cheng-zhong-ji-ming-ling.html">
+            
+                <a href="../process-about/jin-cheng-zhong-ji-ming-ling.html">
+            
+                    
+                        <b>4.3.4.</b>
+                    
+                    进程中级命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.5" data-path="../process-about/jin-cheng-gao-ji-ming-ling.html">
+            
+                <a href="../process-about/jin-cheng-gao-ji-ming-ling.html">
+            
+                    
+                        <b>4.3.5.</b>
+                    
+                    进程高级命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.6" data-path="../process-about/jin-cheng-wen-jian-du-xie.html">
+            
+                <a href="../process-about/jin-cheng-wen-jian-du-xie.html">
+            
+                    
+                        <b>4.3.6.</b>
+                    
+                    进程文件读写
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.7" data-path="../process-about/jin-cheng-tong-xin-fang-shi.html">
+            
+                <a href="../process-about/jin-cheng-tong-xin-fang-shi.html">
+            
+                    
+                        <b>4.3.7.</b>
+                    
+                    进程通信方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.8" data-path="../process-about/jin-cheng-xin-xi-cai-ji.html">
+            
+                <a href="../process-about/jin-cheng-xin-xi-cai-ji.html">
+            
+                    
+                        <b>4.3.8.</b>
+                    
+                    进程信息采集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.9" data-path="../process-about/jin-cheng-diao-shi-ji-zhu.html">
+            
+                <a href="../process-about/jin-cheng-diao-shi-ji-zhu.html">
+            
+                    
+                        <b>4.3.9.</b>
+                    
+                    进程调试技术
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../network-about/">
+            
+                <a href="../network-about/">
+            
+                    
+                        <b>4.4.</b>
+                    
+                    网络相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.1" data-path="../network-about/wang-luo-ji-chu-ming-ling.html">
+            
+                <a href="../network-about/wang-luo-ji-chu-ming-ling.html">
+            
+                    
+                        <b>4.4.1.</b>
+                    
+                    网络基础命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.2" data-path="../network-about/wang-luo-gao-ji-ming-ling.html">
+            
+                <a href="../network-about/wang-luo-gao-ji-ming-ling.html">
+            
+                    
+                        <b>4.4.2.</b>
+                    
+                    网络高级命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.3" data-path="../network-about/wang-luo-qing-qiu-ming-ling.html">
+            
+                <a href="../network-about/wang-luo-qing-qiu-ming-ling.html">
+            
+                    
+                        <b>4.4.3.</b>
+                    
+                    网络请求命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.4" data-path="../network-about/wang-luo-jiao-hu-ming-ling.html">
+            
+                <a href="../network-about/wang-luo-jiao-hu-ming-ling.html">
+            
+                    
+                        <b>4.4.4.</b>
+                    
+                    网络交互命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.5" data-path="../network-about/wang-luo-lu-you-ming-ling.html">
+            
+                <a href="../network-about/wang-luo-lu-you-ming-ling.html">
+            
+                    
+                        <b>4.4.5.</b>
+                    
+                    网络路由命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.6" data-path="../network-about/wang-luo-ji-chu-zhi-shi.html">
+            
+                <a href="../network-about/wang-luo-ji-chu-zhi-shi.html">
+            
+                    
+                        <b>4.4.6.</b>
+                    
+                    网络基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.7" data-path="../network-about/wang-luo-ti-xi-jie-gou.html">
+            
+                <a href="../network-about/wang-luo-ti-xi-jie-gou.html">
+            
+                    
+                        <b>4.4.7.</b>
+                    
+                    网络体系结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.8" data-path="../network-about/wang-luo-chuan-shu-guo-cheng.html">
+            
+                <a href="../network-about/wang-luo-chuan-shu-guo-cheng.html">
+            
+                    
+                        <b>4.4.8.</b>
+                    
+                    网络传输过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.9" data-path="../network-about/wang-luo-IP-di-zhi.html">
+            
+                <a href="../network-about/wang-luo-IP-di-zhi.html">
+            
+                    
+                        <b>4.4.9.</b>
+                    
+                    网络IP地址
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                        <b>4.5.</b>
+                    
+                    系统相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.1" data-path="kai-ji-qi-dong.html">
+            
+                <a href="kai-ji-qi-dong.html">
+            
+                    
+                        <b>4.5.1.</b>
+                    
+                    开机启动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.2" data-path="xi-tong-xin-xi.html">
+            
+                <a href="xi-tong-xin-xi.html">
+            
+                    
+                        <b>4.5.2.</b>
+                    
+                    系统信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.3" data-path="xi-tong-ming-ling.html">
+            
+                <a href="xi-tong-ming-ling.html">
+            
+                    
+                        <b>4.5.3.</b>
+                    
+                    系统命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.4" data-path="shi-yong-ming-ling.html">
+            
+                <a href="shi-yong-ming-ling.html">
+            
+                    
+                        <b>4.5.4.</b>
+                    
+                    实用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.5" data-path="ding-shi-ren-wu.html">
+            
+                <a href="ding-shi-ren-wu.html">
+            
+                    
+                        <b>4.5.5.</b>
+                    
+                    定时任务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.5.6" data-path="ri-zhi-sou-ji.html">
+            
+                <a href="ri-zhi-sou-ji.html">
+            
+                    
+                        <b>4.5.6.</b>
+                    
+                    日志搜集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.7" data-path="yu-yan-he-ri-qi.html">
+            
+                <a href="yu-yan-he-ri-qi.html">
+            
+                    
+                        <b>4.5.7.</b>
+                    
+                    语言和日期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.8" data-path="fang-huo-qiang-ji-chu.html">
+            
+                <a href="fang-huo-qiang-ji-chu.html">
+            
+                    
+                        <b>4.5.8.</b>
+                    
+                    防火墙基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.9" data-path="fang-huo-qiang-shi-yong.html">
+            
+                <a href="fang-huo-qiang-shi-yong.html">
+            
+                    
+                        <b>4.5.9.</b>
+                    
+                    防火墙使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">综合篇</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../../zong-he-pian/zi-liao-tui-jian/">
+            
+                <a href="../../zong-he-pian/zi-liao-tui-jian/">
+            
+                    
+                        <b>5.1.</b>
+                    
+                    资料推荐
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../../zong-he-pian/zi-liao-tui-jian/wang-zhan-tui-jian.html">
+            
+                <a href="../../zong-he-pian/zi-liao-tui-jian/wang-zhan-tui-jian.html">
+            
+                    
+                        <b>5.1.1.</b>
+                    
+                    网站推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../../zong-he-pian/zi-liao-tui-jian/shu-ji-tui-jian.html">
+            
+                <a href="../../zong-he-pian/zi-liao-tui-jian/shu-ji-tui-jian.html">
+            
+                    
+                        <b>5.1.2.</b>
+                    
+                    书籍推荐
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../../zong-he-pian/gong-ju-ji-qiao/">
+            
+                <a href="../../zong-he-pian/gong-ju-ji-qiao/">
+            
+                    
+                        <b>5.2.</b>
+                    
+                    工具技巧
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="../../zong-he-pian/gong-ju-ji-qiao/macbi-ji-ben.html">
+            
+                <a href="../../zong-he-pian/gong-ju-ji-qiao/macbi-ji-ben.html">
+            
+                    
+                        <b>5.2.1.</b>
+                    
+                    Mac笔记本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.2" data-path="../../zong-he-pian/gong-ju-ji-qiao/chromeliu-lan-qi.html">
+            
+                <a href="../../zong-he-pian/gong-ju-ji-qiao/chromeliu-lan-qi.html">
+            
+                    
+                        <b>5.2.2.</b>
+                    
+                    Chrome浏览器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.3" data-path="../../zong-he-pian/gong-ju-ji-qiao/sublimebian-ji-qi.html">
+            
+                <a href="../../zong-he-pian/gong-ju-ji-qiao/sublimebian-ji-qi.html">
+            
+                    
+                        <b>5.2.3.</b>
+                    
+                    Sublime编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2.4" data-path="../../zong-he-pian/gong-ju-ji-qiao/ideabian-ji-qi.html">
+            
+                <a href="../../zong-he-pian/gong-ju-ji-qiao/ideabian-ji-qi.html">
+            
+                    
+                        <b>5.2.4.</b>
+                    
+                    Idea编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >日志搜集</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><a href="#&#x7CFB;&#x7EDF;&#x65E5;&#x5FD7;">&#x7CFB;&#x7EDF;&#x65E5;&#x5FD7;</a></li><li><a href="#&#x65E5;&#x5FD7;&#x5207;&#x5272;">&#x65E5;&#x5FD7;&#x5207;&#x5272;</a></li><li><a href="#&#x65E5;&#x5FD7;&#x91C7;&#x96C6;">&#x65E5;&#x5FD7;&#x91C7;&#x96C6;</a></li><ul><li><a href="#&#x65E5;&#x5FD7;&#x91C7;&#x96C6;">&#x65E5;&#x5FD7;&#x91C7;&#x96C6;</a></li><ul><li><a href="#&#x673A;&#x5668;&#x6570;&#x636E;">&#x673A;&#x5668;&#x6570;&#x636E;</a></li><li><a href="#&#x7F51;&#x7EDC;&#x6570;&#x636E;">&#x7F51;&#x7EDC;&#x6570;&#x636E;</a></li></ul><li><a href="#&#x65E5;&#x5FD7;&#x5206;&#x6790;">&#x65E5;&#x5FD7;&#x5206;&#x6790;</a></li><li><a href="#&#x6280;&#x672F;&#x7279;&#x70B9;">&#x6280;&#x672F;&#x7279;&#x70B9;</a></li></ul><li><a href="#&#x91C7;&#x96C6;&#x5DE5;&#x5177;">&#x91C7;&#x96C6;&#x5DE5;&#x5177;</a></li><ul><li><a href="#linux&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x5DE5;&#x5177;">linux&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x5DE5;&#x5177;</a></li><ul><li><a href="#rsyslog">rsyslog</a></li><li><a href="#syslog-ng">syslog-ng</a></li><li><a href="#logstash">logstash</a></li></ul><li><a href="#windows&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x5DE5;&#x5177;">windows&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x5DE5;&#x5177;</a></li><ul><li><a href="#nxlog">nxlog</a></li><li><a href="#rsyslog">rsyslog</a></li></ul></ul><li><a href="#&#x53C2;&#x8003;">&#x53C2;&#x8003;</a></li></ul></div><a href="#&#x7CFB;&#x7EDF;&#x65E5;&#x5FD7;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x7CFB;&#x7EDF;&#x65E5;&#x5FD7;"><a name="&#x7CFB;&#x7EDF;&#x65E5;&#x5FD7;" class="anchor-navigation-ex-anchor" href="#&#x7CFB;&#x7EDF;&#x65E5;&#x5FD7;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7CFB;&#x7EDF;&#x65E5;&#x5FD7;</h1>
+<p>&#x7CFB;&#x7EDF;&#x65E5;&#x5FD7;&#x5BF9;&#x4E8E;&#x95EE;&#x9898;&#x8FFD;&#x8E2A;&#x548C;&#x5B89;&#x5168;&#x9632;&#x62A4;&#x975E;&#x5E38;&#x91CD;&#x8981;&#xFF0C;&#x901A;&#x5E38;&#x5728; <code>/var/log</code> &#x76EE;&#x5F55;&#x4E0B;&#x9762;&#xFF0C;&#x8BE6;&#x60C5;&#x53C2;&#x8003;&#x53C2;&#x8003;&#x4E2D;&#x7684;&#x94FE;&#x63A5;</p>
+<h1 id="&#x65E5;&#x5FD7;&#x5207;&#x5272;"><a name="&#x65E5;&#x5FD7;&#x5207;&#x5272;" class="anchor-navigation-ex-anchor" href="#&#x65E5;&#x5FD7;&#x5207;&#x5272;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65E5;&#x5FD7;&#x5207;&#x5272;</h1>
+<p>&#x65E5;&#x5FD7;&#x6BCF;&#x65F6;&#x6BCF;&#x523B;&#x90FD;&#x5728;&#x4EA7;&#x751F;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x67D0;&#x4E2A;&#x65F6;&#x523B;&#x6216;&#x8FBE;&#x5230;&#x6307;&#x5B9A;&#x5927;&#x5C0F;&#x540E;&#x8FDB;&#x884C;&#x5207;&#x5272;&#x548C;&#x5907;&#x4EFD;&#xFF0C;&#x8BE6;&#x60C5;&#x53C2;&#x8003;&#x53C2;&#x8003;&#x4E2D;&#x7684;&#x94FE;&#x63A5;</p>
+<h1 id="&#x65E5;&#x5FD7;&#x91C7;&#x96C6;"><a name="&#x65E5;&#x5FD7;&#x91C7;&#x96C6;" class="anchor-navigation-ex-anchor" href="#&#x65E5;&#x5FD7;&#x91C7;&#x96C6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65E5;&#x5FD7;&#x91C7;&#x96C6;</h1>
+<h2 id="&#x65E5;&#x5FD7;&#x91C7;&#x96C6;"><a name="&#x65E5;&#x5FD7;&#x91C7;&#x96C6;" class="anchor-navigation-ex-anchor" href="#&#x65E5;&#x5FD7;&#x91C7;&#x96C6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65E5;&#x5FD7;&#x91C7;&#x96C6;</h2>
+<p>&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x662F;&#x6307;&#x5229;&#x7528;&#x65E5;&#x5FD7;&#x641C;&#x96C6;&#x5DE5;&#x5177;&#x5C06;&#x673A;&#x5668;&#x6570;&#x636E;&#x548C;&#x7F51;&#x7EDC;&#x6570;&#x636E;&#x91C7;&#x96C6;&#x5230;&#x7EDF;&#x4E00;&#x7684;&#x5730;&#x65B9;&#x8FDB;&#x884C;&#x5206;&#x6790;&#x548C;&#x5904;&#x7406;</p>
+<h3 id="&#x673A;&#x5668;&#x6570;&#x636E;"><a name="&#x673A;&#x5668;&#x6570;&#x636E;" class="anchor-navigation-ex-anchor" href="#&#x673A;&#x5668;&#x6570;&#x636E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x673A;&#x5668;&#x6570;&#x636E;</h3>
+<p>&#x673A;&#x5668;&#x6570;&#x636E;&#x662F;&#x6307;&#x8F6F;&#x4EF6;&#x6240;&#x80FD;&#x591F;&#x4EA7;&#x751F;&#x7684;&#x5404;&#x79CD;&#x6570;&#x636E;</p>
+<ul>
+<li>&#x65E5;&#x5FD7;&#x6587;&#x4EF6;</li>
+<li>&#x6307;&#x6807;&#x6570;&#x636E;</li>
+<li>&#x4E1A;&#x52A1;&#x6570;&#x636E;</li>
+</ul>
+<h3 id="&#x7F51;&#x7EDC;&#x6570;&#x636E;"><a name="&#x7F51;&#x7EDC;&#x6570;&#x636E;" class="anchor-navigation-ex-anchor" href="#&#x7F51;&#x7EDC;&#x6570;&#x636E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7F51;&#x7EDC;&#x6570;&#x636E;</h3>
+<p>&#x7F51;&#x7EDC;&#x6570;&#x636E;&#x662F;&#x6307;&#x5BF9;&#x7F51;&#x7EDC;&#x6D41;&#x91CF;&#x8FDB;&#x884C;&#x6293;&#x5305;&#x548C;&#x89E3;&#x6790;</p>
+<h2 id="&#x65E5;&#x5FD7;&#x5206;&#x6790;"><a name="&#x65E5;&#x5FD7;&#x5206;&#x6790;" class="anchor-navigation-ex-anchor" href="#&#x65E5;&#x5FD7;&#x5206;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65E5;&#x5FD7;&#x5206;&#x6790;</h2>
+<p>&#x65E5;&#x5FD7;&#x5206;&#x6790;&#x662F;&#x5BF9;&#x65E5;&#x5FD7;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x89E3;&#x6790;&#xFF0C;&#x5E76;&#x7ED3;&#x5408;&#x5B9E;&#x9645;&#x4E1A;&#x52A1;&#x8FDB;&#x884C;&#x5206;&#x6790;&#x548C;&#x5904;&#x7406;</p>
+<ul>
+<li>&#x6545;&#x969C;&#x6392;&#x67E5;</li>
+<li>&#x5F02;&#x5E38;&#x544A;&#x8B66;</li>
+<li>&#x8D8B;&#x52BF;&#x9884;&#x6D4B;</li>
+<li>&#x6027;&#x80FD;&#x76D1;&#x63A7;</li>
+<li>&#x4E1A;&#x52A1;&#x5206;&#x6790;</li>
+<li>&#x5B89;&#x5168;&#x5BA1;&#x8BA1;</li>
+</ul>
+<h2 id="&#x6280;&#x672F;&#x7279;&#x70B9;"><a name="&#x6280;&#x672F;&#x7279;&#x70B9;" class="anchor-navigation-ex-anchor" href="#&#x6280;&#x672F;&#x7279;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6280;&#x672F;&#x7279;&#x70B9;</h2>
+<ul>
+<li>&#x65E5;&#x5FD7;&#x96C6;&#x4E2D;&#x5206;&#x6790;&#xFF0C;&#x5904;&#x7406;&#x548C;&#x5B58;&#x50A8;</li>
+<li>&#x5168;&#x6587;&#x68C0;&#x7D22;&#xFF0C;&#x5B57;&#x6BB5;&#x68C0;&#x7D22;&#xFF0C;&#x5173;&#x8054;&#x5206;&#x6790;</li>
+<li>&#x53EF;&#x89C6;&#x5316;&#x5C55;&#x793A;&#xFF0C;&#x53CA;&#x65F6;&#x9884;&#x8B66;</li>
+</ul>
+<h1 id="&#x91C7;&#x96C6;&#x5DE5;&#x5177;"><a name="&#x91C7;&#x96C6;&#x5DE5;&#x5177;" class="anchor-navigation-ex-anchor" href="#&#x91C7;&#x96C6;&#x5DE5;&#x5177;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x91C7;&#x96C6;&#x5DE5;&#x5177;</h1>
+<h2 id="linux&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x5DE5;&#x5177;"><a name="linux&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x5DE5;&#x5177;" class="anchor-navigation-ex-anchor" href="#linux&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x5DE5;&#x5177;"><i class="fa fa-link" aria-hidden="true"></i></a>linux&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x5DE5;&#x5177;</h2>
+<h3 id="rsyslog"><a name="rsyslog" class="anchor-navigation-ex-anchor" href="#rsyslog"><i class="fa fa-link" aria-hidden="true"></i></a>rsyslog</h3>
+<p><code>rsyslog</code> &#x662F;&#x5927;&#x591A;&#x6570;linux&#x7CFB;&#x7EDF;&#x7684;&#x9ED8;&#x8BA4;&#x91C7;&#x96C6;&#x5DE5;&#x5177;&#xFF0C;&#x5177;&#x6709;&#x4EE5;&#x4E0B;&#x7279;&#x70B9;</p>
+<ul>
+<li>&#x57FA;&#x4E8E;c&#x8BED;&#x8A00;&#x5F00;&#x53D1;&#x7684;&#xFF0C;&#x652F;&#x6301;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x9AD8;&#x6027;&#x80FD;&#x91C7;&#x96C6;&#x5DE5;&#x5177;</li>
+<li>&#x652F;&#x6301;&#x53EF;&#x9760;&#x7684;tcp&#x4F20;&#x8F93;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;ssl&#x52A0;&#x5BC6;</li>
+<li>&#x6A21;&#x5757;&#x5316;&#x8BBE;&#x8BA1;&#xFF0C;&#x652F;&#x6301;&#x6309;&#x9700;&#x52A0;&#x8F7D;&#x6A21;&#x5757;&#x4F7F;&#x7528;</li>
+<li>&#x652F;&#x6301;&#x57FA;&#x4E8E;&#x5185;&#x5B58;&#x548C;&#x6587;&#x4EF6;&#x7F13;&#x51B2;&#x961F;&#x5217;</li>
+<li>&#x652F;&#x6301;kafka&#x7B49;&#x591A;&#x79CD;&#x8F93;&#x51FA;</li>
+<li>&#x652F;&#x6301;&#x65E5;&#x5FD7;&#x538B;&#x7F29;</li>
+</ul>
+<blockquote>
+<p>rsyslog&#x7684;&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#x53EF;&#x4EE5;&#x53C2;&#x7167;<a href="http://www.rsyslog.com/" target="_blank">&#x8FD9;&#x91CC;</a>&#xFF0C;&#x5B98;&#x7F51;&#x53C2;&#x8003;<a href="http://areyouok.iteye.com/blog/251590" target="_blank">&#x8FD9;&#x91CC;</a>&#xFF0C;Github&#x53C2;&#x8003;<a href="https://segmentfault.com/a/1190000003509909" target="_blank">&#x8FD9;&#x91CC;</a></p>
+</blockquote>
+<h3 id="syslog-ng"><a name="syslog-ng" class="anchor-navigation-ex-anchor" href="#syslog-ng"><i class="fa fa-link" aria-hidden="true"></i></a>syslog-ng</h3>
+<p><code>syslog-ng</code> &#x4E5F;&#x662F;linux&#x4E0A;&#x6BD4;&#x8F83;&#x597D;&#x7684;&#x91C7;&#x96C6;&#x5DE5;&#x5177;&#xFF0C;&#x548C; <code>rsyslog</code> &#x7C7B;&#x4F3C;</p>
+<blockquote>
+<p><code>SUSE Linux</code>&#x548C; <code>OpenSUSE</code>&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;<code>syslog-ng</code>&#xFF0C;&#x8BE6;&#x60C5;&#x53C2;&#x7167;<a href="https://www.ibm.com/support/home/" target="_blank">&#x8FD9;&#x91CC;</a></p>
+</blockquote>
+<h3 id="logstash"><a name="logstash" class="anchor-navigation-ex-anchor" href="#logstash"><i class="fa fa-link" aria-hidden="true"></i></a>logstash</h3>
+<p>logstash&#x662F;&#x65B0;&#x5174;&#x7684;&#x5F00;&#x6E90;&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x5DE5;&#x5177;&#xFF0C;&#x662F;ELK&#x4E2D;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x5458;</p>
+<table>
+<thead>
+<tr>
+<th>&#x7F29;&#x5199;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E</td>
+<td>Elasticsearch&#xFF08;&#x65E5;&#x5FD7;&#x5B58;&#x50A8;&#x548C;&#x68C0;&#x7D22;&#x5F15;&#x64CE;&#xFF09;</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Logstash&#xFF08;&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x5DE5;&#x5177;&#xFF09;</td>
+</tr>
+<tr>
+<td>K</td>
+<td>Kibana&#xFF08;&#x53EF;&#x89C6;&#x5316;&#x5C55;&#x793A;&#x5DE5;&#x5177;&#xFF09;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4F46;&#x662F;&#x7531;&#x4E8E;logstash&#x975E;&#x5E38;&#x6D88;&#x8017;&#x6027;&#x80FD;&#xFF0C;&#x6240;&#x4EE5;&#x884D;&#x751F;&#x4E86;&#x66F4;&#x52A0;&#x8F7B;&#x91CF;&#x7684;&#x91C7;&#x96C6;&#x5DE5;&#x5177;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5DE5;&#x5177;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Filebeat</td>
+<td>&#x91C7;&#x96C6;&#x6587;&#x4EF6;&#x6570;&#x636E;</td>
+</tr>
+<tr>
+<td>Metricbeat</td>
+<td>&#x91C7;&#x96C6;&#x6307;&#x6807;&#x6570;&#x636E;</td>
+</tr>
+<tr>
+<td>Packetbeat</td>
+<td>&#x91C7;&#x96C6;&#x7F51;&#x7EDC;&#x6570;&#x636E;</td>
+</tr>
+<tr>
+<td>Winlogbeat</td>
+<td>&#x91C7;&#x96C6;Windows&#x7CFB;&#x7EDF;&#x65E5;&#x5FD7;</td>
+</tr>
+<tr>
+<td>Heartbeat</td>
+<td>&#x76D1;&#x6D4B;&#x5E94;&#x7528;&#x5B58;&#x6D3B;&#x72B6;&#x6001;</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><code>rsyslog</code>&#xFF0C;<code>syslog-ng</code>&#xFF0C;<code>logstash</code>&#x7684;&#x5BF9;&#x6BD4;&#x53EF;&#x4EE5;&#x53C2;&#x7167;<a href="http://as400topics.blogspot.com/2011/12/remote-syslogd-from-as400-to-unix-or.html" target="_blank">&#x8FD9;&#x91CC;</a></p>
+</blockquote>
+<h2 id="windows&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x5DE5;&#x5177;"><a name="windows&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x5DE5;&#x5177;" class="anchor-navigation-ex-anchor" href="#windows&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x5DE5;&#x5177;"><i class="fa fa-link" aria-hidden="true"></i></a>windows&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x5DE5;&#x5177;</h2>
+<h3 id="nxlog"><a name="nxlog" class="anchor-navigation-ex-anchor" href="#nxlog"><i class="fa fa-link" aria-hidden="true"></i></a>nxlog</h3>
+<p>nxlog&#x662F;windows&#x5E73;&#x53F0;&#x4E0A;&#x6BD4;&#x8F83;&#x5E38;&#x7528;&#x7684;&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x5DE5;&#x5177;&#xFF0C;&#x8BE6;&#x60C5;&#x53C2;&#x7167;<a href="http://www.ilanni.com/?p=595" target="_blank">&#x8FD9;&#x91CC;</a></p>
+<h3 id="rsyslog"><a name="rsyslog" class="anchor-navigation-ex-anchor" href="#rsyslog"><i class="fa fa-link" aria-hidden="true"></i></a>rsyslog</h3>
+<p>rsyslog&#x4E5F;&#x6709;windows&#x5E73;&#x53F0;&#x7684;&#x5BA2;&#x6237;&#x7AEF;</p>
+<p><br> </p>
+<hr>
+<h1 id="&#x53C2;&#x8003;"><a name="&#x53C2;&#x8003;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x8003;</h1>
+<p><a href="http://www.rsyslog.com/" target="_blank">rsyslog&#x5B98;&#x65B9;&#x6587;&#x6863;</a><br><a href="http://areyouok.iteye.com/blog/251590" target="_blank">slog&#x4ECB;&#x7ECD;(&#x4E00;) &#xFF1A;BSD syslog&#x534F;&#x8BAE;&#x7684;&#x683C;&#x5F0F;</a><br><a href="https://segmentfault.com/a/1190000003509909" target="_blank">Linux&#x73AF;&#x5883;&#x4E0B;&#x4F7F;&#x7528;rsyslog&#x7BA1;&#x7406;&#x65E5;&#x5FD7;</a><br><a href="http://bigsec.net/one/tool/rsyslog.html" target="_blank">rsyslog&#x4F7F;&#x7528;&#x8BE6;&#x89E3;</a><br><a href="https://www.howtoing.com/building-a-central-loghost-on-centos-and-rhel-5-with-rsyslog/" target="_blank">&#x5728;CentOS&#x548C;RHEL 5&#x4E0A;&#x4F7F;&#x7528;rsyslog&#x6784;&#x5EFA;&#x4E2D;&#x592E;&#x65E5;&#x5FD7;&#x4E3B;&#x673A;-Howtoing&#x8FD0;&#x7EF4;&#x6559;&#x7A0B;</a><br><a href="http://dmdgeeker.com/post/rsyslog-collect-logs/" target="_blank">&#x4F7F;&#x7528;rsyslog&#x96C6;&#x4E2D;&#x7BA1;&#x7406;&#x65E5;&#x5FD7;</a><br><a href="https://wiki.splunk.com/Community:HowTo_Configure_Mac_OS_X_Syslog_To_Forward_Data" target="_blank">HowTo Configure Mac OS X Syslog To Forward Data</a><br><a href="https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3750x_3560x/software/release/12-2_55_se/configuration/guide/3750xscg/swlog.pdf" target="_blank">Configuring System Message Logging</a><br><a href="https://www.ibm.com/support/home/" target="_blank">IBM PASE for System i and Syslog / Syslogd</a><br><a href="http://as400topics.blogspot.com/2011/12/remote-syslogd-from-as400-to-unix-or.html" target="_blank">Remote SYSLOGD from AS400 to UNIX or Linux Servers</a><br><a href="http://www.ilanni.com/?p=595" target="_blank">&#x4F7F;&#x7528;Evtsys&#x548C;Nxlog&#x642D;&#x5EFA;syslog&#x65E5;&#x5FD7;&#x670D;&#x52A1;&#x5668;-&#x70C2;&#x6CE5;&#x884C;&#x5929;&#x4E0B;</a><br><a href="http://www.jianshu.com/p/f3658d267b5d" target="_blank">ELK 5.x &#x642D;&#x5EFA;&#x5927;&#x89C4;&#x6A21;&#x65E5;&#x5FD7;&#x5B9E;&#x65F6;&#x5904;&#x7406;&#x7CFB;&#x7EDF;</a><br><a href="http://chenlinux.com/2015/02/12/rsyslog-forwarder-testing/" target="_blank">rsyslog &#x7684; TCP &#x8F6C;&#x53D1;&#x6027;&#x80FD;&#x6D4B;&#x8BD5;</a><br><a href="http://www.cnblogs.com/xing901022/p/5631445.html" target="_blank">Flume&#x65E5;&#x5FD7;&#x91C7;&#x96C6;&#x7CFB;&#x7EDF;&#x2014;&#x2014;&#x521D;&#x4F53;&#x9A8C;&#xFF08;Logstash&#x5BF9;&#x6BD4;&#x7248;&#xFF09;</a><br><a href="http://shiyanjun.cn/archives/915.html" target="_blank">Flume(NG)&#x67B6;&#x6784;&#x8BBE;&#x8BA1;&#x8981;&#x70B9;&#x53CA;&#x914D;&#x7F6E;&#x5B9E;&#x8DF5;</a><br><a href="http://blog.csdn.net/liukuan73/article/details/52318243" target="_blank">&#x5173;&#x4E8E;Logstash&#x4E2D;grok&#x63D2;&#x4EF6;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x4F8B;&#x5B50;</a><br><a href="http://wiki.rsyslog.com/index.php/OpenSUSE" target="_blank">OpenSUSE - rsyslog wiki</a><br><a href="https://unix.stackexchange.com/questions/205883/understand-logging-in-linux" target="_blank">Understand logging in Linux</a><br><a href="https://www.quora.com/What-is-the-difference-between-syslogd-and-klogd-daemon-in-Linux" target="_blank">What is the difference between syslogd and klogd daemon in Linux? - Quora</a><br><a href="http://teaching.idallen.com/cst8207/12f/notes/805_system_log_files.html" target="_blank">Unix/Linux system logging, log files, kernel messages</a><br><a href="https://feichashao.com/rhel7-logging/" target="_blank">RHEL7: &#x7CFB;&#x7EDF;&#x65E5;&#x5FD7;(rsyslog, journal)</a><br><a href="https://serverfault.com/questions/532278/rsyslog-configuration-for-changing-source-interface" target="_blank">Rsyslog configuration for changing source interface</a><br><a href="https://github.com/rsyslog/rsyslog/issues/1090" target="_blank">reopenOnTruncate is not obeyed unless a state file was loaded &#xB7; Issue #1090</a><br><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-elk-filebeat/index.html" target="_blank">ELK+Filebeat &#x96C6;&#x4E2D;&#x5F0F;&#x65E5;&#x5FD7;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x8BE6;&#x89E3;</a><br><a href="http://ant595.blog.51cto.com/5074217/1080922" target="_blank">syslog&#x53CA;syslog-ng&#x8BE6;&#x89E3;</a><br><a href="https://pzolee.blogs.balabit.com/2009/12/troubleshooting-and-debugging-syslog-ng/" target="_blank">Troubleshooting and debugging syslog-ng</a><br><a href="https://lists.balabit.hu/pipermail/syslog-ng/2009-January/012454.html" target="_blank">[syslog-ng] Cannot find init.d.AIX in contrib folder</a><br><a href="https://www.ibm.com/support/knowledgecenter/en/ssw_aix_61/com.ibm.aix.cmds3/mkssys.htm" target="_blank">AIX mkssys Command</a><br><a href="https://www.ibm.com/support/knowledgecenter/zh/ssw_aix_72/com.ibm.aix.cmds4/rmssys.htm" target="_blank">AIX rmssys Command</a><br><a href="https://www.ibm.com/support/knowledgecenter/zh/ssw_aix_72/com.ibm.aix.cmds3/lssrc.htm" target="_blank">AIX lssrc  Command</a><br><a href="http://networker.tistory.com/421" target="_blank">[syslog-ng] How to install syslog-ng on AIX 5.3 [English]</a><br><a href="https://www.gitbook.com/book/chenryn/elk-stack-guide-cn/details" target="_blank">ELKstack &#x4E2D;&#x6587;&#x6307;&#x5357; &#xB7; GitBook</a><br><a href="https://www.elastic.co/cn/products/elasticsearch" target="_blank">Elasticsearch&#x5B98;&#x7F51;</a><br><a href="https://elasticsearch.cn/explore/" target="_blank">Elasticsearch&#x793E;&#x533A;</a><br><a href="https://elasticsearch.cn/question/1815" target="_blank">aix&#x7CFB;&#x7EDF;&#x4E0B;&#x600E;&#x4E48;&#x6536;&#x96C6;&#x65E5;&#x5FD7; - Elastic&#x4E2D;&#x6587;&#x793E;&#x533A;</a><br><a href="http://l1z2g9.github.io/2015/11/17/ELK-install-in-AIX-and-Windows/" target="_blank">ELK-install-in-AIX-and-Windows</a><br><a href="https://tech.meituan.com/mt-log-system-arch.html" target="_blank">&#x57FA;&#x4E8E;Flume&#x7684;&#x7F8E;&#x56E2;&#x65E5;&#x5FD7;&#x6536;&#x96C6;&#x7CFB;&#x7EDF;(&#x4E00;)&#x67B6;&#x6784;&#x548C;&#x8BBE;&#x8BA1;</a><br><a href="https://doc.yonyoucloud.com/doc/logstash-best-practice-cn/get_start/index.html" target="_blank">Logstash &#x6700;&#x4F73;&#x5B9E;&#x8DF5;</a><br><a href="https://github.com/elastic/logstash-forwarder/blob/master/README.md" target="_blank">logstash-forwarder</a> 
+<a href="https://github.com/didfet/logstash-forwarder-java" target="_blank">logstash-forwarder-java</a><br><a href="https://github.com/didfet/logstash-forwarder-java/blob/master/HOWTO-KEYSTORE.md" target="_blank">How to create a java keystore</a><br><a href="http://www.cnblogs.com/richaaaard/p/6109595.html" target="_blank">ELK &#x6027;&#x80FD;(1) &#x2014; Logstash &#x6027;&#x80FD;&#x53CA;&#x5176;&#x66FF;&#x4EE3;&#x65B9;&#x6848; - Richaaaard - &#x535A;&#x5BA2;&#x56ED;</a><br><a href="https://github.com/chenryn/logstash-best-practice-cn/blob/master/ecosystem/logstash_forwarder.md" target="_blank">Logstash Forwarder &#x914D;&#x7F6E;&#x8BE6;&#x89E3;</a><br><a href="https://github.com/chenryn/logstash-best-practice-cn/blob/master/get_start/daemon.md" target="_blank">Logstash Forwarder &#x957F;&#x671F;&#x8FD0;&#x884C;</a><br><a href="https://github.com/elastic/logstash/pull/7442" target="_blank">Add setting to enable string escaping in Logstash pipeline config</a><br><a href="https://www.quora.com/What-is-the-best-date-time-parsing-library-in-any-language" target="_blank">What is the best date/time parsing library in any language? - Quora</a><br><a href="https://github.com/didfet/logstash-forwarder-java/issues/29" target="_blank">logstash-forwarder-java javax.net.ssl.SSLHandshakeException</a><br><a href="https://www.slideshare.net/rainergerhards1/using-wildcards-with-rsyslogs-file-monitor-imfile" target="_blank">rsyslog, Using Wildcards with rsyslog&apos;s File Monitor imfile</a><br><a href="https://cloudblog.github.io/2016/11/19/%E6%AF%8F%E7%A7%92%E7%99%BE%E4%B8%87%E7%BA%A7%E6%B5%81%E5%BC%8F%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%86%E6%9E%B6%E6%9E%84%E7%9A%84%E5%BC%80%E5%8F%91%E8%BF%90%E7%BB%B4%E8%B0%83%E4%BC%98%E7%AC%94%E8%AE%B0/" target="_blank">&#x6BCF;&#x79D2;&#x767E;&#x4E07;&#x7EA7;&#x6D41;&#x5F0F;&#x65E5;&#x5FD7;&#x5904;&#x7406;&#x67B6;&#x6784;&#x7684;&#x5F00;&#x53D1;&#x8FD0;&#x7EF4;&#x8C03;&#x4F18;&#x7B14;&#x8BB0;</a><br><a href="http://www.ywnds.com/?p=1304" target="_blank">Linux&#x4E2D;rsyslog&#x65E5;&#x5FD7;&#x7CFB;&#x7EDF;&#x8BE6;&#x89E3;</a><br><a href="http://www.jianshu.com/p/74c1f8ac00c7" target="_blank">rsyslog &#x961F;&#x5217;&#x4ECB;&#x7ECD;</a><br><a href="http://www.ywnds.com/?p=2778" target="_blank">Linux&#x4E2D;syslog-ng&#x65E5;&#x5FD7;&#x7CFB;&#x7EDF; &#x2013; &#x8FD0;&#x7EF4;&#x90A3;&#x70B9;&#x4E8B;</a><br><a href="http://www.crackjet.com/afsql-error-on-syslog-ng-resolved/" target="_blank">&#x2018;Afsql&#x2019; error on syslog-ng resolved</a><br><a href="https://www.carrier-lost.org/syslog-ng-on-vserver-with-debian-lenny/" target="_blank">syslog-ng on vServer with Debian Lenny</a><br><a href="https://www.balabit.com/documents/syslog-ng-ose-latest-guides/en/syslog-ng-ose-guide-admin/html/chapter-troubleshooting-syslog-ng.html" target="_blank">Troubleshooting syslog-ng</a><br><a href="https://www.qcloud.com/community/article/328693" target="_blank">&#x65E5;&#x5FD7;&#x6613;&#xFF1A;IT &#x8FD0;&#x7EF4;&#x5206;&#x6790;&#x53CA;&#x6D77;&#x91CF;&#x65E5;&#x5FD7;&#x641C;&#x7D22;&#x7684;&#x5B9E;&#x8DF5;&#x4E4B;&#x8DEF;&#xFF08;&#x4E0A;&#xFF09;</a><br><a href="https://www.qcloud.com/community/article/693305" target="_blank">&#x65E5;&#x5FD7;&#x6613;&#xFF1A;IT &#x8FD0;&#x7EF4;&#x5206;&#x6790;&#x53CA;&#x6D77;&#x91CF;&#x65E5;&#x5FD7;&#x641C;&#x7D22;&#x7684;&#x5B9E;&#x8DF5;&#x4E4B;&#x8DEF;&#xFF08;&#x4E0B;&#xFF09;</a>
+<a href="https://www.rizhiyi.com/" target="_blank">&#x65E5;&#x5FD7;&#x6613;&#x5B98;&#x7F51;</a><br><a href="https://www.loggly.com/" target="_blank">Loggly&#x5B98;&#x7F51;</a><br><a href="https://www.splunk.com/zh-hans_cn/" target="_blank">Splunk&#x5B98;&#x7F51;</a><br><a href="http://blog.csdn.net/u013038461/article/details/44154221" target="_blank">&#x5982;&#x4F55;&#x67E5;&#x770B;linux&#x7CFB;&#x7EDF;&#x4E0B;&#x7684;&#x5404;&#x79CD;&#x65E5;&#x5FD7;&#x6587;&#x4EF6; linux &#x7CFB;&#x7EDF;&#x65E5;&#x5FD7;&#x7684;&#x5206;&#x6790;&#x5927;&#x5168;</a><br><a href="http://h2appy.blog.51cto.com/609721/781281/" target="_blank">/var/log&#x76EE;&#x5F55;&#x4E0B;&#x7684;20&#x4E2A;Linux&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x529F;&#x80FD;&#x8BE6;&#x89E3;</a><br><a href="https://linux.cn/article-3587-1.html" target="_blank">Linux&#x7CFB;&#x7EDF;&#x4E2D;&#x2018;dmesg&#x2019;&#x547D;&#x4EE4;&#x5904;&#x7406;&#x6545;&#x969C;&#x548C;&#x6536;&#x96C6;&#x7CFB;&#x7EDF;&#x4FE1;&#x606F;&#x7684;7&#x79CD;&#x7528;&#x6CD5;</a><br><a href="http://www.ywnds.com/?p=5471" target="_blank">Linux&#x4E2D;logrotate&#x65E5;&#x5FD7;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#x8BE6;&#x89E3;</a><br><a href="http://www.udpwork.com/item/9695.html" target="_blank">&#x88AB;&#x9057;&#x5FD8;&#x7684;Logrotate</a><br><a href="http://www.lightxue.com/how-logrotate-works" target="_blank">logrotate&#x673A;&#x5236;&#x548C;&#x539F;&#x7406;</a><br><a href="https://linux.cn/article-4126-1.html" target="_blank">Linux&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x603B;&#x7BA1;&#x2014;&#x2014;logrotate</a><br><a href="http://blog.csdn.net/ohmygirl/article/details/40385083" target="_blank">/dev/random&#x548C;/dev/urandom&#x7684;&#x4E00;&#x70B9;&#x5907;&#x5FD8;</a><br><a href="https://segmentfault.com/q/1010000007761269/a-1020000007761350" target="_blank">&#x600E;&#x4E48;&#x4F7F;&#x7528; /dev/urandom &#x751F;&#x6210;&#x56FA;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x968F;&#x673A;&#x6570;&#xFF1F;</a>  </p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; zhujipeng 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">   &#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-03-17 13:41:33
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ding-shi-ren-wu.html" class="navigation navigation-prev " aria-label="Previous page: 定时任务">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="yu-yan-he-ri-qi.html" class="navigation navigation-next " aria-label="Next page: 语言和日期">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"日志搜集","level":"4.5.6","depth":2,"next":{"title":"语言和日期","level":"4.5.7","depth":2,"path":"senior-chapter/system-about/yu-yan-he-ri-qi.md","ref":"senior-chapter/system-about/yu-yan-he-ri-qi.md","articles":[]},"previous":{"title":"定时任务","level":"4.5.5","depth":2,"path":"senior-chapter/system-about/ding-shi-ren-wu.md","ref":"senior-chapter/system-about/ding-shi-ren-wu.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","github@^2.0.0","github-buttons@2.1.0","-edit-link@^2.0.2","anchors@^0.7.1","anchor-navigation-ex@0.1.8","expandable-chapters-small@^0.1.7","favicon@^0.0.2","search-plus@^0.0.11","splitter@^0.0.8","simple-page-toc@^0.1.1","tbfed-pagefooter@^0.0.1","-sectionx@^3.1.0","advanced-emoji@^0.2.1","prism@^2.1.0","prism-themes@^0.0.2","include-codeblock@^3.0.2","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","mermaid@^0.0.9","local-video@^1.0.1","donate@^1.0.2","-disqus@^0.1.0","-sitemap-general@^0.1.1","3-ba@^0.9.0","todo@^0.1.3"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © zhujipeng 2017","modify_label":"   该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"disqus":{"shortName":"linux-mannual"},"emphasize":{},"ace":{},"github":{"url":"https://github.com/jipengzhu"},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"mermaid":{},"donate":{"alipay":"https://github.com/jipengzhu/jipengzhu.github.io/blob/master/images/alipay.jpeg?raw=true","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://github.com/jipengzhu/jipengzhu.github.io/blob/master/images/weixin.jpeg?raw=true","wechatText":"微信打赏"},"sitemap-general":{"prefix":""},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{"tag":"b"},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"prism-themes":{},"github-buttons":{"repo":"jipengzhu/linux-mannual","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":""},"expandable-chapters-small":{},"local-video":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":true,"fixlang":false,"lang":"","template":"ace","theme":"chrome","unindent":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"base":"","label":"Edit This Page"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"search-plus":{}},"theme":"default","author":"朱继鹏","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"linux基础手册","language":"zh-hans","output.name":"site","links":{"sidebar":{"Blog":"https://jipengzhu.github.io/","Github":"https://github.com/jipengzhu"}},"gitbook":"3.2.3","description":"总结我在linux学习过程中遇到的知识，以供我和大家参考"},"file":{"path":"senior-chapter/system-about/ri-zhi-sou-ji.md","mtime":"2018-03-17T05:41:33.190Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-17T05:51:49.195Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
